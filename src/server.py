@@ -79,17 +79,17 @@ def parseResults(code, resized=False):
         'best_guess': ''
     }
 
-    for div in soup.findAll('div', attrs={'class':'rc'}):
+    for div in soup.findAll('div', attrs={'class':'yuRUbf'}):
         sLink = div.find('a')
         results['links'].append(sLink['href'])
 
-    for desc in soup.findAll('span', attrs={'class':'st'}):
+    for desc in soup.findAll('div', attrs={'class':'VwiC3b yXK7lf MUxGbd yDYNvb lyLwlc lEBKkf'}):
         results['descriptions'].append(desc.get_text())
 
-    for title in soup.findAll('h3', attrs={'class':'r'}):
+    for title in soup.findAll('h3', attrs={'class':'LC20lb MBeuO DKV0Md'}):
         results['titles'].append(title.get_text())
 
-    for similar_image in soup.findAll('div', attrs={'rg_meta'}):
+    for similar_image in soup.findAll('div', attrs={'iur'}):
         tmp = json.loads(similar_image.get_text())
         img_url = tmp['ou']
         results['similar_images'].append(img_url)
